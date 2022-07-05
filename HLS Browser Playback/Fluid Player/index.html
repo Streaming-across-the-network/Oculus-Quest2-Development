@@ -1,1 +1,25 @@
-What are those?
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <video id='hls-video'>
+        <source src='stream_hls.m3u8' type='application/x-mpegURL'/>
+    </video>
+    
+    <script>
+    fluidPlayer(
+        'hls-video',
+        {
+            layoutControls: {
+                fillToContainer: true
+            }
+        }
+    );
+    </script>
+</body>
+</html>
