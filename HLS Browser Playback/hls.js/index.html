@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>360° Kamera-Livestream Powered by Hls.js</title>
+    <title>360°Kamera HLS-Livestream Powered by Hls.js</title>
   </head>
 
   <body>
@@ -8,7 +8,7 @@
 
     <center>
       <h1>360° Kamera-Livestream Powered by Hls.js</h1>
-      <video height="600" id="video" controls></video>
+      <video width="66%" id="video" controls></video>
     </center>
 
     <script>
@@ -17,23 +17,67 @@
         var hls = new Hls({
           debug: true,
         });
-        hls.loadSource('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+        hls.loadSource('https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8');
         hls.attachMedia(video);
         hls.on(Hls.Events.MEDIA_ATTACHED, function () {
-          video.muted = true;
-          video.play();
+          video.muted = false;
+         
         });
       }
-      // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
-      // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element through the `src` property.
-      // This is using the built-in support of the plain video element, without using hls.js.
-      else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8';
-        video.addEventListener('canplay', function () {
-          video.play();
-        });
-      }
+
+/* Get the element you want to display in fullscreen */
+var elem = document.getElementById("video");
+
+/* Execute the openFullscreen() function to open the video in fullscreen. Include prefixes for browsers that do not support the requestFullscreen property */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}     
+
+
+
+
+var vid = document.getElementById("video");
+vid.onplaying = function() {
+    openFullscreen();
+};
+
+
+function playVid() {
+    vid.play();
+}
+
+function pauseVid() {
+    vid.pause();
+}
+
+
+
     </script>
+
+
+<h2>Fullscreen with JavaScript</h2>
+<p>Click on the button to open the video in fullscreen mode.</p>
+<button onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
+<p><strong>Tip:</strong> Press the "Esc" key to exit full screen.</p>
+
+
+
+
+<h2>PlayVideo with JavaScript</h2>
+<p>Click on the button to Play the video.</p>
+<button onclick="vid.play();">Play Video</button>
+
+
+
+
   <!-- injected in netlify post processing step -->
+
+  
 </body>
 </html>
