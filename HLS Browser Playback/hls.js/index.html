@@ -11,7 +11,7 @@
 
     <center>
       <h1>360° Kamera-Livestream Powered by Hls.js</h1>
-      <video width="66%" id="video" controls></video>
+      <video width="66%" id="video"></video>
     </center>
 
     <script>
@@ -69,7 +69,8 @@ function pauseVid() {
 -->
 
 
-<button type="button" class="block" onclick="openFullscreen(); vid.play();">Play Video</button>
+<button type="button" class="playbutton" onclick="openFullscreen(); vid.play();">Play Stream in Fullscreen</button>
+<button type="button" class="pausebutton" onclick= "vid.pause();">Pause Stream</button>
 
 </body>
 </html>
