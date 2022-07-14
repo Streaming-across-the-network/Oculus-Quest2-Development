@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+
 <html>
   <head>
     <title>360°Kamera HLS-Livestream Powered by Hls.js</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
@@ -43,11 +46,11 @@ function openFullscreen() {
 
 
 var vid = document.getElementById("video");
-vid.onplaying = function() {
+/*vid.onplaying = function() {
     openFullscreen();
 };
 
-
+*/
 function playVid() {
     vid.play();
 }
@@ -56,28 +59,17 @@ function pauseVid() {
     vid.pause();
 }
 
+</script>
 
-
-    </script>
-
-
+<!--
 <h2>Fullscreen with JavaScript</h2>
 <p>Click on the button to open the video in fullscreen mode.</p>
-<button onclick="openFullscreen();">Open Video in Fullscreen Mode</button>
+<button onclick="openFullscreen(); vid.play(); ">Open Video in Fullscreen Mode</button>
 <p><strong>Tip:</strong> Press the "Esc" key to exit full screen.</p>
+-->
 
 
+<button type="button" class="block" onclick="openFullscreen(); vid.play();">Play Video</button>
 
-
-<h2>PlayVideo with JavaScript</h2>
-<p>Click on the button to Play the video.</p>
-<button onclick="vid.play();">Play Video</button>
-
-
-
-
-  <!-- injected in netlify post processing step -->
-
-  
 </body>
 </html>
