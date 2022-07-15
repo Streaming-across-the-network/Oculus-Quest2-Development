@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <title>360°Kamera HLS-Livestream Powered by Hls.js</title>
     <link rel="stylesheet" href="styles.css">
@@ -9,10 +9,10 @@
   <body>
     <script src="hls.js"></script>
 
-    <center>
+
       <h1>360° Kamera-Livestream Powered by Hls.js</h1>
       <video width="66%" id="video"></video>
-    </center>
+  
 
     <script>
       var video = document.getElementById('video');
@@ -60,13 +60,6 @@ function pauseVid() {
 }
 
 </script>
-
-<!--
-<h2>Fullscreen with JavaScript</h2>
-<p>Click on the button to open the video in fullscreen mode.</p>
-<button onclick="openFullscreen(); vid.play(); ">Open Video in Fullscreen Mode</button>
-<p><strong>Tip:</strong> Press the "Esc" key to exit full screen.</p>
--->
 
 
 <button type="button" class="playbutton" onclick="openFullscreen(); vid.play();">Play Stream in Fullscreen</button>
