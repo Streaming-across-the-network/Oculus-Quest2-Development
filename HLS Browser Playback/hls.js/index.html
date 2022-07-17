@@ -4,23 +4,62 @@
   <head>
     <title>360°Kamera HLS-Livestream Powered by Hls.js</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
 
   <body>
     <script src="hls.js"></script>
 
 
-      <h1>360° Kamera-Livestream Powered by Hls.js</h1>
-      <video width="66%" id="video"></video>
+      
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <center>
+      
+      <div class = "container-fluid" id="container1">
+      
+        
+        <div class="row" id="row1">
+          <div class="col"><h1>360° Camera-Livestream Powered by Hls.js</h1></div>
+        </div>
+
+        <div class="row" id="row2">
+          <div class="c-video">
+            <div class="col"><video width="66%" id="video"></video></div>
+          </div>         
+        </div>
+
+        <div class="row" id="row3">
+          <div class="col">
+            <div class="controls">
+              <button type="button" class="playbutton" onclick="openFullscreen(); vid.play();">
+                <ion-icon name="play-outline" size = "large" id="PlayButton"></ion-icon>
+                </i></button>
+              <button type="button" class="pausebutton" onclick= "vid.pause();">
+                <ion-icon name="pause-outline" size = "large"id="PauseButton"></ion-icon>
+                </i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </center>
   
 
     <script>
+
+
+let IPAddr = prompt("Please enter your IP address");
+
+
+
+      var test_stream = 'https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8';
       var video = document.getElementById('video');
       if (Hls.isSupported()) {
         var hls = new Hls({
           debug: true,
         });
-        hls.loadSource('https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8');
+        hls.loadSource('http://'+IPAddr+'/live/livestream.m3u8');
         hls.attachMedia(video);
         hls.on(Hls.Events.MEDIA_ATTACHED, function () {
           video.muted = false;
@@ -61,9 +100,6 @@ function pauseVid() {
 
 </script>
 
-
-<button type="button" class="playbutton" onclick="openFullscreen(); vid.play();">Play Stream in Fullscreen</button>
-<button type="button" class="pausebutton" onclick= "vid.pause();">Pause Stream</button>
 
 </body>
 </html>
