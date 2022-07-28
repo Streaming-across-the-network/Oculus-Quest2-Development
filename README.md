@@ -12,7 +12,9 @@ An Meta Quest 2 in Developer Mode:
 
 ***
 ### Preparing the Meta quest 2 and the ODH (one time only):
-1.	Connect the Meta Quest 2 to your PC and copy the folder "hls.js" to the internal storage of the Headset. (next to the download and oculus folder)
+1.	Connect the Meta Quest 2 to your PC and copy the folder "hls.js" to the internal storage of the Headset.  
+(next to the download and oculus folder)
+
 2.	Create in OHD this custom command: 
 ```adb 
 adb -s _ODH_CONNECTED_DEVICE_SERIAL_ID_ shell am start \-n com.oculus.os.vrbrowserlauncher/.MainActivity \-a android.intent.action.VIEW -d 'file:///storage/emulated/0/hls.js/index.html' 
