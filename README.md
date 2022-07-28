@@ -1,4 +1,4 @@
-# Setting up the PC and the Meta Quest 2
+# Setting up the Meta Quest 2 PC and the Oculus Developer Hub (OHD)
 
 ### Preexisting requierments:
 
