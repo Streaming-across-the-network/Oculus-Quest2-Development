@@ -44,10 +44,10 @@ body {
 }
 
 #row2 {
-  margin-top: 70px;
+  margin-top: 30px;
 }
 #row3 {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .control-button{
@@ -93,7 +93,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 70px;
+  
 }
   
 .like__btn{
@@ -115,7 +115,6 @@ body {
 }
 
 /* Share Buttons */
-
 
 .share-btn-container {
   background: rgba(255, 255, 255, 0);
